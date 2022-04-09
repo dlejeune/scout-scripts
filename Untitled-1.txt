@@ -1,0 +1,12 @@
+<ul>
+    <li><strong>Name:</strong> {Name} {Surname}</li>
+    <li><strong>Patrol:</strong> {Patrol}</li>
+    <li><strong>Gender:</strong> {Gender}</li>
+    <li><strong>Date of Birth:</strong> {dob}</li>
+    <li><strong>Cell Number:</strong> {Phone}</li>
+    <li><strong>Email:</strong> {Email}</li>
+    <li><strong>Role:</strong> {Role}</li>
+</ul>
+
+
+<a href="mailto:daniel.lejeune@scouts.org.za">daniel.lejeune@scouts.org.za</a>
