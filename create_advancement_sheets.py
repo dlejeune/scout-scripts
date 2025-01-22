@@ -60,7 +60,7 @@ class AdvancementUtils():
         if not full_export:
             df.loc[df["Passed"] == "X", "Passed"] = True
         else:
-            df[["Temp","DatePassed", "Scouter"]] = df["Passed"].str.split("\n", 2, expand=True)
+            df[["Temp","DatePassed", "Scouter"]] = df["Passed"].str.split("\n", n=2, expand=True)
             df = df.drop(["Temp"], axis = 1)
             df.loc[df["Passed"] != False, "Passed"] = True
             df = df.replace({np.nan: None})
@@ -72,7 +72,7 @@ class AdvancementUtils():
         
         df["Name"] = df["Name"].apply(lambda x: x[0:x.find("\n")])
         df["Name"] = df["Name"].apply(self.trim_name)
-        df[["Level", "Requirement", "Theme"]] = df["Requirement"].str.split("\n", 2, expand=True)
+        df[["Level", "Requirement", "Theme"]] = df["Requirement"].str.split("\n", n=2, expand=True)
 
         df["Theme"] = df["Theme"].str.replace(' \(', '', regex=True)
         df["Theme"] = df["Theme"].str.replace('\)', '', regex=True)
@@ -144,6 +144,7 @@ class AdvancementUtils():
         
         ## Write the DF to the shete
         patrol_df = patrol_df.reset_index()
+        patrol_name = patrol_name.replace("/", "-")
         patrol_df.to_excel(writer, sheet_name = patrol_name, index=False, startrow=first_row_df)
 
         last_col = self.col_numbers[len(patrol_df.columns.to_list())-1]

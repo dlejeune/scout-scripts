@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "scoutscripts"
+name = "scout-scripts"
 version = "0.1.0"
 description = ""
 authors = ["Daniel Le Jeune <daniel.h.lejeune@gmail.com>"]
@@ -8,11 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 pandas = "^2.2.3"
-jupyter = "^1.1.1"
-typer = "^0.15.1"
-polars = "^1.20.0"
-matplotlib = "^3.10.0"
-plotnine = "^0.14.5"
+openpyxl = "^3.1.5"
+xlsxwriter = "^3.2.0"
 
 
 [build-system]
